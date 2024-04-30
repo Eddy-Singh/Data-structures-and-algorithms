@@ -74,9 +74,25 @@ void explainList()
     ls.emplace_front(7); // rest functions are same as vectors
 }
 
+// Stacks
+void explainStack()
+{
+    stack<int> s;
+    s.push(1);
+    s.push(2);
+    s.emplace(3);
+    cout << s.top() << endl;
+    s.pop();
+    cout << s.top() << endl;
+    cout << s.size() << endl;
+    cout << boolalpha << s.empty() << endl;
+}
+
 int main()
 {
     explainPair();
     explainVectors();
+    explainList();
+    explainStack();
     return 0;
 }
