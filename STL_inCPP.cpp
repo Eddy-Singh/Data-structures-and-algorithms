@@ -105,6 +105,7 @@ void explainQueue()
 // Priority Queues
 void explainPriorityQueue()
 {
+    // max heap
     priority_queue<int> pq;
     pq.push(6);
     pq.push(12);
@@ -116,7 +117,7 @@ void explainPriorityQueue()
     cout << pq.size() << endl;
     cout << boolalpha << pq.empty() << endl;
 
-    // minimum heap or priority queue
+    // min heap
     priority_queue<int, vector<int>, greater<int>> pq2;
     pq2.push(6);
     pq2.push(12);
@@ -129,6 +130,22 @@ void explainPriorityQueue()
     cout << boolalpha << pq2.empty() << endl;
 }
 
+// Sets
+void explainSet()
+{ // ordered and unique elements
+    set<int> s;
+    s.insert(10);
+    s.emplace(20);
+    s.insert(70);
+    s.insert(40);
+    s.emplace(50);
+    s.insert(10); // 10 20 40 50 70
+    auto i = s.find(1000);
+    s.erase(40);
+    cout << s.count(50) << endl; // returns 1 if found else 0
+    cout << *i;                  // returns iterator to 1 if found else returns iterator to end
+}
+
 int main()
 {
     explainPair();
@@ -137,5 +154,6 @@ int main()
     explainStack();
     explainQueue();
     explainPriorityQueue();
+    explainSet();
     return 0;
 }
