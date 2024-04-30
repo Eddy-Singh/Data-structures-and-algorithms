@@ -88,11 +88,26 @@ void explainStack()
     cout << boolalpha << s.empty() << endl;
 }
 
+// Queues
+void explainQueue()
+{
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.emplace(3);
+    cout << q.front() << endl;
+    q.pop();
+    cout << q.front() << endl;
+    cout << q.size() << endl;
+    cout << boolalpha << q.empty() << endl;
+}
+
 int main()
 {
     explainPair();
     explainVectors();
     explainList();
     explainStack();
+    explainQueue();
     return 0;
 }
