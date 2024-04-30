@@ -102,6 +102,33 @@ void explainQueue()
     cout << boolalpha << q.empty() << endl;
 }
 
+// Priority Queues
+void explainPriorityQueue()
+{
+    priority_queue<int> pq;
+    pq.push(6);
+    pq.push(12);
+    pq.emplace(4);
+    pq.emplace(5);
+    cout << pq.top() << endl;
+    pq.pop();
+    cout << pq.top() << endl;
+    cout << pq.size() << endl;
+    cout << boolalpha << pq.empty() << endl;
+
+    // minimum heap or priority queue
+    priority_queue<int, vector<int>, greater<int>> pq2;
+    pq2.push(6);
+    pq2.push(12);
+    pq2.emplace(4);
+    pq2.emplace(5);
+    cout << pq2.top() << endl;
+    pq2.pop();
+    cout << pq2.top() << endl;
+    cout << pq2.size() << endl;
+    cout << boolalpha << pq2.empty() << endl;
+}
+
 int main()
 {
     explainPair();
@@ -109,5 +136,6 @@ int main()
     explainList();
     explainStack();
     explainQueue();
+    explainPriorityQueue();
     return 0;
 }
