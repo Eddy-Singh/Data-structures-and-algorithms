@@ -64,6 +64,16 @@ void explainVectors()
     vector<int> v5(v); // copy of v in v5
 }
 
+// Lists
+void explainList()
+{
+    list<int> ls;
+    ls.push_back(4);
+    ls.push_front(5);
+    ls.emplace_back(6);
+    ls.emplace_front(7); // rest functions are same as vectors
+}
+
 int main()
 {
     explainPair();
