@@ -143,7 +143,33 @@ void explainSet()
     auto i = s.find(1000);
     s.erase(40);
     cout << s.count(50) << endl; // returns 1 if found else 0
-    cout << *i;                  // returns iterator to 1 if found else returns iterator to end
+    cout << *i << endl;          // returns iterator to 1 if found else returns iterator to end
+}
+
+// Multi Sets
+void explainMultiSet()
+{ // ordered and non-unique elements
+    multiset<int> s;
+    s.insert(10);
+    s.emplace(20);
+    s.insert(70);
+    s.insert(40);
+    s.emplace(50);
+    s.insert(50);
+    s.emplace(50);
+    s.insert(50);
+    s.insert(10); // 10 10 20 40 50 70
+    auto i = s.find(1000);
+    s.erase(40);
+    s.erase(s.find(50));
+    cout << s.count(10) << endl; // returns 2 if found else 0
+    cout << s.count(50) << endl;
+    cout << *i << endl; // returns iterator to 1 if found else returns iterator to end
+}
+
+// Unordered Sets
+void explainUnorderedSet()
+{
 }
 
 int main()
@@ -155,5 +181,7 @@ int main()
     explainQueue();
     explainPriorityQueue();
     explainSet();
+    explainMultiSet();
+    explainUnorderedSet();
     return 0;
 }
