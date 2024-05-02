@@ -177,10 +177,28 @@ void explainUnorderedSet()
     s.insert(40);
     s.emplace(50);
     s.insert(10); // 50 10 20 70 40
-    auto i = s.find(1000);
+    // auto i = s.find(1000);
     s.erase(40);
     cout << s.count(50) << endl; // returns 1 if found else 0
-    cout << *i << endl;          // returns iterator to 1 if found else returns iterator to end
+    // cout << *i << endl;          // returns iterator to 1 if found else returns iterator to end
+}
+
+// Maps
+void explainMaps()
+{ // ordered and unique keys
+    map<int, int> mpp1;
+    map<int, pair<int, int>> mpp2;
+    map<pair<int, int>, int> mpp3;
+
+    mpp1[1] = 2;
+    mpp1.insert({2, 3});
+    mpp1.emplace(5, 10);
+    mpp3[{4, 1}] = 10;
+
+    for (auto i : mpp1)
+    {
+        cout << i.first << " " << i.second << endl;
+    }
 }
 
 int main()
@@ -194,5 +212,6 @@ int main()
     explainSet();
     explainMultiSet();
     explainUnorderedSet();
+    explainMaps();
     return 0;
 }
