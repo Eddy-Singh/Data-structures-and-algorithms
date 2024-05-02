@@ -199,6 +199,29 @@ void explainMaps()
     {
         cout << i.first << " " << i.second << endl;
     }
+    auto it = mpp1.find(5);
+    cout << it->second << endl;
+}
+
+// Multi Maps
+void explainMultiMaps()
+{ // ordered and non-unique keys
+    multimap<int, int> mpp1;
+    multimap<int, pair<int, int>> mpp2;
+    multimap<pair<int, int>, int> mpp3;
+
+    mpp1.insert({1, 2});
+    mpp1.insert({1, 3});
+    mpp1.insert({2, 3});
+    mpp1.insert({2, 4});
+    mpp1.emplace(5, 10);
+
+    for (auto i : mpp1)
+    {
+        cout << i.first << " " << i.second << endl;
+    }
+    auto it = mpp1.find(5);
+    cout << it->second << endl;
 }
 
 int main()
@@ -213,5 +236,6 @@ int main()
     explainMultiSet();
     explainUnorderedSet();
     explainMaps();
+    explainMultiMaps();
     return 0;
 }
