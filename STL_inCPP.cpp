@@ -224,6 +224,24 @@ void explainMultiMaps()
     cout << it->second << endl;
 }
 
+// Unordered Maps
+void explainUnorderedMaps()
+{ // unordered and unique keys
+    unordered_map<int, int> mpp1;
+    unordered_map<int, pair<int, int>> mpp2;
+
+    mpp1[1] = 2;
+    mpp1.insert({2, 3});
+    mpp1.emplace(5, 10);
+
+    for (auto i : mpp1)
+    {
+        cout << i.first << " " << i.second << endl;
+    }
+    auto it = mpp1.find(5);
+    cout << it->second << endl;
+}
+
 int main()
 {
     explainPair();
@@ -237,5 +255,6 @@ int main()
     explainUnorderedSet();
     explainMaps();
     explainMultiMaps();
+    explainUnorderedSet();
     return 0;
 }
