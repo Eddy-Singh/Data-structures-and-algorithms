@@ -52,7 +52,6 @@ int calcGCD(int n, int m)
 }
 
 // You are given an integer 'n'. Return 'true' if 'n' is an Armstrong number, and 'false' otherwise.
-
 // An Armstrong number is a number (with 'k' digits) such that the sum of its digits raised to 'kth' power is equal to the number itself. For example, 371 is an Armstrong number because 3^3 + 7^3 + 1^3 = 371.
 bool checkArmstrong(int n)
 {
@@ -75,11 +74,38 @@ bool checkArmstrong(int n)
     return (n == sum);
 }
 
+// You are given an integer ‘n’. Function ‘sumOfDivisors(n)’ is defined as the sum of all divisors of ‘n’. Find the sum of ‘sumOfDivisors(i)’ for all ‘i’ from 1 to ‘n’.
+int sumOfDivisors(int n)
+{
+    int sum = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            sum = sum + i;
+        }
+    }
+    return sum;
+}
+int sumOfAllDivisors(int n)
+{
+    int sum = 0;
+    int dup = n;
+
+    for (int i = 0; i < n; i++)
+    {
+        sum = sum + sumOfDivisors(dup);
+        dup--;
+    }
+    return sum;
+}
+
 int main()
 {
     cout << countDigits(336) << endl;
     cout << reverseBits(12) << endl;
     cout << calcGCD(20, 15) << endl;
     cout << checkArmstrong(371) << endl;
+    cout << sumOfAllDivisors(5) << endl;
     return 0;
 }
