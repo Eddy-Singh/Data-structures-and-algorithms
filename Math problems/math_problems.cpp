@@ -100,6 +100,23 @@ int sumOfAllDivisors(int n)
     return sum;
 }
 
+// Check prime
+bool CheckPrime(int n)
+{
+    if ((n == 0) || (n == 1) || (n == 2))
+    {
+        return false;
+    }
+    for (int i = 2; i <= sqrt(n); i++)
+    {
+        if (n % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 int main()
 {
     cout << countDigits(336) << endl;
@@ -107,5 +124,7 @@ int main()
     cout << calcGCD(20, 15) << endl;
     cout << checkArmstrong(371) << endl;
     cout << sumOfAllDivisors(5) << endl;
+    cout << boolalpha << CheckPrime(5) << endl;
+
     return 0;
 }
