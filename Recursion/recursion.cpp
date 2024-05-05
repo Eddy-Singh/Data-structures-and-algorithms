@@ -33,6 +33,13 @@ vector<int> printNum(int x)
     return v;
 }
 
+long long sumFirstN(long long n)
+{
+    if (n == 0)
+        return 0;
+    return (n + sumFirstN(n - 1));
+}
+
 int main()
 {
     auto j = printNos(5);
@@ -52,5 +59,7 @@ int main()
     {
         cout << i << " ";
     }
+
+    cout << sumFirstN(5) << endl;
     return 0;
 }
