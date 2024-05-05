@@ -19,6 +19,20 @@ vector<string> printNTimes(int n, vector<string> v = {})
     return printNTimes(n - 1, v);
 }
 
+void recur(int x, vector<int> &v)
+{
+    if (x == 0)
+        return;
+    v.push_back(x);
+    recur(--x, v);
+}
+vector<int> printNum(int x)
+{
+    vector<int> v;
+    recur(x, v);
+    return v;
+}
+
 int main()
 {
     auto j = printNos(5);
@@ -33,5 +47,10 @@ int main()
         cout << i << " ";
     }
 
+    auto k = printNum(5);
+    for (auto i : k)
+    {
+        cout << i << " ";
+    }
     return 0;
 }
