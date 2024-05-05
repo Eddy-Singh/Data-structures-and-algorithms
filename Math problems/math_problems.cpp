@@ -103,9 +103,13 @@ int sumOfAllDivisors(int n)
 // Check prime
 bool CheckPrime(int n)
 {
-    if ((n == 0) || (n == 1) || (n == 2))
+    if ((n == 0) || (n == 1))
     {
         return false;
+    }
+    if (n == 2)
+    {
+        return true;
     }
     for (int i = 2; i <= sqrt(n); i++)
     {
