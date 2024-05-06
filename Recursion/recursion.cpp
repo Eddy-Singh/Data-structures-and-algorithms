@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+#include <string>
 
 vector<int> printNos(int x, vector<int> v = {})
 {
@@ -77,25 +78,38 @@ vector<long long> factorialNumbers(long long n)
 // Reverse an array
 void reverseArrayHelper(std::vector<int> &nums, int start, int end)
 {
-    // Base case: if start >= end, we have reversed the array
     if (start >= end)
     {
         return;
     }
-
-    // Swap nums[start] and nums[end]
     int temp = nums[start];
     nums[start] = nums[end];
     nums[end] = temp;
 
-    // Recursively reverse the remaining elements
     reverseArrayHelper(nums, start + 1, end - 1);
 }
-std::vector<int> reverseArray(int n, std::vector<int> &nums)
+vector<int> reverseArray(int n, std::vector<int> &nums)
 {
-    // Call the helper function with start = 0 and end = n - 1
     reverseArrayHelper(nums, 0, n - 1);
     return nums;
+}
+
+// Determine if a given string ‘S’ is a palindrome using recursion. Return a Boolean value of true if it is a palindrome and false if it is not.
+bool isPalindrome(string &str)
+{
+    // Write your code here.
+    int size = str.size();
+    int start = 0;
+    int end = size - 1;
+    string copy = str;
+    while (start < end)
+    {
+        swap(copy[start], copy[end]);
+
+        start++;
+        end--;
+    }
+    return (copy == str);
 }
 
 int main()
@@ -120,10 +134,5 @@ int main()
 
     cout << sumFirstN(5) << endl;
 
-    auto q = factorialNumbers(5);
-    for (auto i : q)
-    {
-        cout << i << "=>";
-    }
     return 0;
 }
