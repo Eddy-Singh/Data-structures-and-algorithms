@@ -41,7 +41,7 @@ long long sumFirstN(long long n)
 }
 
 // Your task is to return a sorted array (in increasing order) containing all the factorial numbers which are less than or equal to ‘n’.
-long long recur(int x)
+long long recurs(int x)
 {
     if (x == 0 || x == 1)
     {
@@ -49,17 +49,16 @@ long long recur(int x)
     }
     else
     {
-        return x * recur(x - 1);
+        return x * recurs(x - 1);
     }
 }
 vector<long long> factorialNumbers(long long n)
 {
-    // Write Your Code Here
     vector<long long> v;
+    int i = 1;
     while (true)
     {
-        int i = 1;
-        long long fact = recur(i);
+        long long fact = recurs(i);
 
         if (fact <= n)
         {
@@ -73,6 +72,30 @@ vector<long long> factorialNumbers(long long n)
     }
 
     return v;
+}
+
+// Reverse an array
+void reverseArrayHelper(std::vector<int> &nums, int start, int end)
+{
+    // Base case: if start >= end, we have reversed the array
+    if (start >= end)
+    {
+        return;
+    }
+
+    // Swap nums[start] and nums[end]
+    int temp = nums[start];
+    nums[start] = nums[end];
+    nums[end] = temp;
+
+    // Recursively reverse the remaining elements
+    reverseArrayHelper(nums, start + 1, end - 1);
+}
+std::vector<int> reverseArray(int n, std::vector<int> &nums)
+{
+    // Call the helper function with start = 0 and end = n - 1
+    reverseArrayHelper(nums, 0, n - 1);
+    return nums;
 }
 
 int main()
@@ -96,5 +119,11 @@ int main()
     }
 
     cout << sumFirstN(5) << endl;
+
+    auto q = factorialNumbers(5);
+    for (auto i : q)
+    {
+        cout << i << "=>";
+    }
     return 0;
 }
