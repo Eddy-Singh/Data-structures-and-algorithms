@@ -40,6 +40,41 @@ long long sumFirstN(long long n)
     return (n + sumFirstN(n - 1));
 }
 
+// Your task is to return a sorted array (in increasing order) containing all the factorial numbers which are less than or equal to ‘n’.
+long long recur(int x)
+{
+    if (x == 0 || x == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return x * recur(x - 1);
+    }
+}
+vector<long long> factorialNumbers(long long n)
+{
+    // Write Your Code Here
+    vector<long long> v;
+    while (true)
+    {
+        int i = 1;
+        long long fact = recur(i);
+
+        if (fact <= n)
+        {
+            v.push_back(fact);
+            i++;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    return v;
+}
+
 int main()
 {
     auto j = printNos(5);
