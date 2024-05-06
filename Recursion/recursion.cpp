@@ -112,6 +112,21 @@ bool isPalindrome(string &str)
     return (copy == str);
 }
 
+vector<int> generateFibonacciNumbers(int n)
+{
+    vector<int> result;
+    int a = 0;
+    int b = 1;
+    for (int i = a; i < n; i++)
+    {
+        result.push_back(a);
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+    return result;
+}
+
 int main()
 {
     auto j = printNos(5);
