@@ -35,5 +35,29 @@ int main()
         cout << "Frequency: " << hash[x] << endl;
     }
 
+    string s;
+    cout << "enter your string: ";
+    cin >> s;
+
+    // precomputing
+    int hashh[26] = {0};
+    for (int i = 0; i < s.size(); i++)
+    {
+        hashh[s[i] - 'a']++;
+    }
+
+    // fetching
+    int k;
+    cout << "enter the number of characters you want to fetch: ";
+    cin >> k;
+    cout << endl;
+    while (k--)
+    {
+        char c;
+        cout << "Enter character: ";
+        cin >> c;
+        cout << "Frequency: " << hashh[c - 'a'] << endl;
+    }
+
     return 0;
 }
