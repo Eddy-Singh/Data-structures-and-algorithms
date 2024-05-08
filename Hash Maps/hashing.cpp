@@ -58,6 +58,7 @@ int main()
         cout << "Frequency: " << hashh[c - 'a'] << endl;
     }
 
+    // Hash maps
     int t;
     cin >> t;
     int arrr[t];
