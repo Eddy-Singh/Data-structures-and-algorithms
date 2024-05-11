@@ -31,6 +31,19 @@ void bubbleSort(int arr[], int n)
     }
 }
 
+void insertionSort(int arr[], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        int j = 1;
+        while (j > 0 && arr[j - 1] > arr[j])
+        {
+            swap(arr[j], arr[j - 1]);
+            j--;
+        }
+    }
+}
+
 int main()
 {
     int n;
@@ -47,6 +60,12 @@ int main()
     }
     cout << endl;
     bubbleSort(arr, n);
+    for (auto i : arr)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+    insertionSort(arr, n);
     for (auto i : arr)
     {
         cout << i << " ";
