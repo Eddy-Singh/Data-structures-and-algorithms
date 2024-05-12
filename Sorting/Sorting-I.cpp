@@ -23,9 +23,9 @@ void bubbleSort(int arr[], int n)
     {
         for (int j = 0; j <= i - 1; j++)
         {
-            if (arr[j] > arr[i])
+            if (arr[j] > arr[j + 1])
             {
-                swap(arr[i], arr[j]);
+                swap(arr[j + 1], arr[j]);
             }
         }
     }
@@ -33,9 +33,9 @@ void bubbleSort(int arr[], int n)
 
 void insertionSort(int arr[], int n)
 {
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i <= n - 1; i++)
     {
-        int j = 1;
+        int j = i;
         while (j > 0 && arr[j - 1] > arr[j])
         {
             swap(arr[j], arr[j - 1]);
