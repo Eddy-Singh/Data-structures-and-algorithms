@@ -60,7 +60,7 @@ void recursiveBubbleSort(int arr[], int n)
     if (n == 1)
         return;
     int didSwap = 0;
-    for (int i = 0; i < n - 2; i++)
+    for (int i = 0; i < n - 1; i++)
     {
         if (arr[i] > arr[i + 1])
         {
@@ -71,6 +71,25 @@ void recursiveBubbleSort(int arr[], int n)
     if (didSwap == 0)
         return;
     recursiveBubbleSort(arr, n - 1);
+}
+
+void insertionSort(int arr[], int i, int n)
+{
+
+    // Base Case: i == n.
+    if (i == n)
+        return;
+
+    int j = i;
+    while (j > 0 && arr[j - 1] > arr[j])
+    {
+        int temp = arr[j - 1];
+        arr[j - 1] = arr[j];
+        arr[j] = temp;
+        j--;
+    }
+
+    insertionSort(arr, i + 1, n);
 }
 
 int main()
