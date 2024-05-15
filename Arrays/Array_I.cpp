@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 1 Find the largest element of an array
 int findmax(int arr[], int n)
 {
     int max = arr[0];
@@ -12,10 +13,20 @@ int findmax(int arr[], int n)
     return max;
 }
 
+// 2 Find the second largest element of an array
+int findmax2(auto arr)
+{
+    sort(arr.begin(), arr.end());
+    return arr[arr.size() - 2];
+}
+
 int main()
 {
     int arr[] = {2, 5, 14, 2, 5, 16, 4, 23, 6, 18};
+    vector<int> arr2 = {2, 5, 14, 2, 5, 16, 4, 23, 6, 18};
     int i = findmax(arr, sizeof(arr) / sizeof(arr[0]));
-    cout << arr[i] << endl;
+    int j = findmax2(arr2);
+    cout << i << endl;
+    cout << j << endl;
     return 0;
 }
