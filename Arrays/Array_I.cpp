@@ -20,6 +20,18 @@ int findmax2(auto arr)
     return arr[arr.size() - 2];
 }
 
+// check if array is sorted
+bool isSorted(int arr[], int n)
+{
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] < arr[i - 1])
+            return false;
+    }
+
+    return true;
+}
+
 int main()
 {
     int arr[] = {2, 5, 14, 2, 5, 16, 4, 23, 6, 18};
