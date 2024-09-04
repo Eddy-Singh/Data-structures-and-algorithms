@@ -93,6 +93,21 @@ void explainDeque()
     dq.back();
 };
 
+void explainStack()
+{
+    // LIFO
+    stack<int> st;
+    st.push(3);
+    st.emplace(10);
+    st.pop(); // 10
+    st.emplace(14);
+    st.emplace(3);
+    cout << st.top();   // 3
+    cout << st.empty(); // bool
+    cout << st.size();
+    stack<int> st1, st2;
+    st1.swap(st2);
+}
 class Cookie
 {
 private:
