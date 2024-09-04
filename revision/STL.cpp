@@ -163,10 +163,43 @@ void explainSet()
     st.insert(2);
     st.emplace(2);
     st.emplace(4);
-    st.emplace(3); // 1 2 3 4
+    st.emplace(5);
+    st.emplace(3); // 1 2 3 4 5
 
     set<int>::iterator it = st.find(3);
-    auto it = st.find(2);
+    auto iter = st.find(2); // iterator points to the end st.end()
+    st.erase(5);
+    st.erase(st.find(2), st.find(4)); // 1 4 5
+
+    int cnt = st.count(2); // 1 or 0
+}
+
+void multiSet()
+{
+    // sorted and can store duplicates
+    // everything else is same as set
+    multiset<int> ms;
+    ms.insert(1);
+    ms.emplace(1);
+    ms.emplace(1);
+    ms.emplace(2);
+    ms.emplace(2);
+    ms.emplace(2);
+    ms.emplace(2);
+    ms.emplace(3);
+    ms.emplace(3);
+
+    ms.erase(3);          // erases all 1's
+    ms.erase(ms.find(2)); // erases only one 2
+    int cnt = ms.count(2);
+}
+
+void explainUSet()
+{
+    // unsorted but unique
+    // everthing else is same as sets
+    unordered_set<int> st;
+    // 3 1 4 2 5 6 0 9
 }
 
 class Cookie
@@ -203,5 +236,6 @@ int main()
     string num = "0123456789";
     cout << num.substr(3, 4) << endl;
     explainList();
+    explainSet();
     return 0;
 }
