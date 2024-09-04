@@ -225,6 +225,10 @@ void explainMap()
     cout << iter->second;
 }
 
+void explainMultimap()
+{ // can store multiple sorted duplicate key
+    multimap<int, int> mmp;
+}
 class Cookie
 {
 private:
