@@ -202,6 +202,29 @@ void explainUSet()
     // 3 1 4 2 5 6 0 9
 }
 
+void explainMap()
+{
+    // keys are sorted and unique just like sets
+    map<int, int> mpp;
+    map<int, pair<int, int>> mpp1;
+    map<pair<int, int>, int> mpp2;
+
+    mpp[1] = 2;
+    mpp.emplace(3, 1);
+    mpp.insert({2, 5}); // {1,2},{2,5},{3,1}
+
+    for (auto it : mpp)
+    {
+        cout << it.first << " " << it.second << endl;
+    }
+    cout << mpp[1];
+    cout << mpp[5];
+
+    map<int, int>::iterator iter = mpp.find(3);
+    auto ite = mpp.find(2);
+    cout << iter->second;
+}
+
 class Cookie
 {
 private:
@@ -225,17 +248,18 @@ public:
 
 int main()
 {
-    explainPair();
+    // explainPair();
 
-    Cookie *cookieone = new Cookie("Green");
-    cout << cookieone->getColor();
-    cookieone->setColor("blue");
-    cout << cookieone->getColor();
+    // Cookie *cookieone = new Cookie("Green");
+    // cout << cookieone->getColor();
+    // cookieone->setColor("blue");
+    // cout << cookieone->getColor();
 
-    int arr[5] = {1, 2, 3, 4, 5};
-    string num = "0123456789";
-    cout << num.substr(3, 4) << endl;
-    explainList();
-    explainSet();
+    // int arr[5] = {1, 2, 3, 4, 5};
+    // string num = "0123456789";
+    // cout << num.substr(3, 4) << endl;
+    // explainList();
+    // explainSet();
+    explainMap();
     return 0;
 }
