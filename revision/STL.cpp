@@ -226,9 +226,16 @@ void explainMap()
 }
 
 void explainMultimap()
-{ // can store multiple sorted duplicate key
+{ // can store multiple sorted duplicate key, rest same as maps
     multimap<int, int> mmp;
 }
+
+void explainUMap()
+{
+    // can store unsorted unique keys, rest same as maps
+    unordered_map<int, int> ump;
+}
+
 class Cookie
 {
 private:
