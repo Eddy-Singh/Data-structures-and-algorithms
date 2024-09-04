@@ -110,6 +110,7 @@ void explainStack()
     stack<int> st1, st2;
     st1.swap(st2);
 }
+
 void explainQueue()
 {
     // FIFO
@@ -152,6 +153,20 @@ void explainPQ()
 
     pq.size();
     pq.empty();
+}
+
+void explainSet()
+{
+    // sorted and unique
+    set<int> st;
+    st.insert(1);
+    st.insert(2);
+    st.emplace(2);
+    st.emplace(4);
+    st.emplace(3); // 1 2 3 4
+
+    set<int>::iterator it = st.find(3);
+    auto it = st.find(2);
 }
 
 class Cookie
