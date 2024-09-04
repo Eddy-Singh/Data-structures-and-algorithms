@@ -45,8 +45,6 @@ void explainVector()
     {
         cout << *iter << " ";
     }
-    cout << endl
-         << v.back() << endl; // last element value
 
     v.erase(v.begin());
     v.erase(v.begin(), v.begin() + 2); // 2nd term points to the element next to the mentioned address
@@ -65,6 +63,7 @@ void explainVector()
     v4.clear();        // clears whole  vector
     cout << v.empty(); // bool
     cout << v.front();
+    cout << v.back(); // last element value
 }
 
 void explainList()
@@ -81,6 +80,9 @@ void explainList()
         cout << *it << " ";
     }
     cout << ls.front();
+    cout << ls.back();
+    ls.pop_back();
+    ls.pop_front();
 }
 
 void explainDeque()
@@ -108,6 +110,50 @@ void explainStack()
     stack<int> st1, st2;
     st1.swap(st2);
 }
+void explainQueue()
+{
+    // FIFO
+    queue<int> q;
+    q.emplace(10);
+    q.pop(); // 10
+    q.push(3);
+    q.emplace(14);
+    q.emplace(4);
+    cout << q.front(); // 3
+    cout << q.back();  // 4
+    cout << q.empty(); // bool
+    cout << q.size();
+    stack<int> q1, q2;
+    q1.swap(q2);
+}
+
+void explainPQ()
+{
+    // adds elements such that the queue is in ascending order
+    priority_queue<int> pq; // max heap
+
+    pq.push(5);
+    pq.emplace(2);
+    pq.emplace(8);
+    pq.emplace(19); // 2 5 8 19
+
+    cout << pq.top(); // 19
+
+    priority_queue<int, vector<int>, greater<int>> pq2; // min heap
+    pq2.push(5);
+    pq2.emplace(2);
+    pq2.emplace(8);
+    pq2.emplace(19); // 2 5 8 19
+
+    cout << pq.top(); // 2
+
+    pq.pop();  // 19
+    pq2.pop(); // 2
+
+    pq.size();
+    pq.empty();
+}
+
 class Cookie
 {
 private:
