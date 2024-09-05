@@ -269,27 +269,26 @@ void explainExtra()
     // while(next_permutation(s.begin(),s.end()));
 }
 
-// class Cookie
-// {
-// private:
-//     string color;
+class Cookie
+{
+private:
+    string color;
 
-// public:
-//     Cookie(string color)
-//     {
-//         this->color = color;
-//     }
-//     string getColor()
-//     {
-//         return color;
-//     }
-//     void setColor(string abc)
-//     {
-//         this->color = abc;
-//         cout << "color has been set to: " << color << endl;
-//     }
-// };
-
+public:
+    Cookie(string color)
+    {
+        this->color = color;
+    }
+    string getColor()
+    {
+        return color;
+    }
+    void setColor(string abc)
+    {
+        this->color = abc;
+        cout << "color has been set to: " << color << endl;
+    }
+};
 int main()
 {
     // explainPair();
