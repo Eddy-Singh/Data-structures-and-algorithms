@@ -254,6 +254,13 @@ void explainExtra()
     {
         cout << i << " ";
     }
+
+    int max = *max_element(it, it + 4); // find out the max element in an array or vector
+    int max = *min_element(it, it + 4); // find out the min element in an array or vector
+
+    int num = 7;                       // binary= 00000000000000000000000000000111
+    int cnt = __builtin_popcount(num); // counts the number of set bits(number of times 1 occurred) for the binary of num i.e. 7
+    //__builtin_popcountll(num) for long long inputs
 }
 
 class Cookie
