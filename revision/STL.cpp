@@ -214,7 +214,7 @@ void explainMap()
 
     mpp[1] = 2;
     mpp.emplace(3, 1);
-    mpp2.emplace(7, 11, 12);
+    mpp2.emplace(make_pair(7, 11), 12);
     mpp.insert({2, 5}); // {1,2},{2,5},{3,1}
 
     for (auto it : mpp)
@@ -249,40 +249,46 @@ void explainExtra()
     {
         cout << i << " ";
     }
-    sort(it, it + 4, greater<int>()); // min heap
-    for (auto i : a)
-    {
-        cout << i << " ";
-    }
+    // sort(it, it + 4, greater<int>()); // min heap
+    // for (auto i : a)
+    // {
+    //     cout << i << " ";
+    // }
 
-    int max = *max_element(it, it + 4); // find out the max element in an array or vector
-    int max = *min_element(it, it + 4); // find out the min element in an array or vector
+    // int max = *max_element(it, it + 4); // find out the max element in an array or vector
+    // int max = *min_element(it, it + 4); // find out the min element in an array or vector
 
-    int num = 7;                       // binary= 00000000000000000000000000000111
-    int cnt = __builtin_popcount(num); // counts the number of set bits(number of times 1 occurred) for the binary of num i.e. 7
-    //__builtin_popcountll(num) for long long inputs
+    // int num = 7;                       // binary= 00000000000000000000000000000111
+    // int cnt = __builtin_popcount(num); // counts the number of set bits(number of times 1 occurred) for the binary of num i.e. 7
+    // //__builtin_popcountll(num) for long long inputs
+
+    // string s="321";
+    // sort(s.begin(),s.end());
+
+    // do{cout<<s<<endl;}
+    // while(next_permutation(s.begin(),s.end()));
 }
 
-class Cookie
-{
-private:
-    string color;
+// class Cookie
+// {
+// private:
+//     string color;
 
-public:
-    Cookie(string color)
-    {
-        this->color = color;
-    }
-    string getColor()
-    {
-        return color;
-    }
-    void setColor(string abc)
-    {
-        this->color = abc;
-        cout << "color has been set to: " << color << endl;
-    }
-};
+// public:
+//     Cookie(string color)
+//     {
+//         this->color = color;
+//     }
+//     string getColor()
+//     {
+//         return color;
+//     }
+//     void setColor(string abc)
+//     {
+//         this->color = abc;
+//         cout << "color has been set to: " << color << endl;
+//     }
+// };
 
 int main()
 {
@@ -298,7 +304,7 @@ int main()
     // cout << num.substr(3, 4) << endl;
     // explainList();
     // explainSet();
-    explainMap();
-    explainExtra();
+    // explainMap();
+    // explainExtra();
     return 0;
 }
