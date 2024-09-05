@@ -236,6 +236,22 @@ void explainUMap()
     unordered_map<int, int> ump;
 }
 
+void explainExtra()
+{
+    vector<int> a = {4, 16, 8, 10};
+    auto it = a.begin();
+    sort(it, it + 4);
+    for (auto i : a)
+    {
+        cout << i << " ";
+    }
+    sort(it, it + 4, greater<int>());
+    for (auto i : a)
+    {
+        cout << i << " ";
+    }
+}
+
 class Cookie
 {
 private:
@@ -272,5 +288,6 @@ int main()
     // explainList();
     // explainSet();
     explainMap();
+    explainExtra();
     return 0;
 }
