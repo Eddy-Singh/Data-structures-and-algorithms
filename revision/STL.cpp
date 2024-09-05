@@ -167,7 +167,8 @@ void explainSet()
     st.emplace(3); // 1 2 3 4 5
 
     set<int>::iterator it = st.find(3);
-    auto iter = st.find(2); // iterator points to the end st.end()
+    auto iter = st.find(2);
+    st.erase(iter);
     st.erase(5);
     st.erase(st.find(2), st.find(4)); // 1 4 5
 
@@ -190,7 +191,7 @@ void multiSet()
     ms.emplace(3);
 
     ms.erase(3);          // erases all 1's
-    ms.erase(ms.find(2)); // erases only one 2
+    ms.erase(ms.find(2)); // erases only one occurace of 2
     int cnt = ms.count(2);
 }
 
@@ -207,10 +208,13 @@ void explainMap()
     // keys are sorted and unique just like sets
     map<int, int> mpp;
     map<int, pair<int, int>> mpp1;
-    map<pair<int, int>, int> mpp2;
+    map<pair<int, int>, int> mpp2 = {
+        {{1, 2}, 4},
+        {{2, 5}, 7}};
 
     mpp[1] = 2;
     mpp.emplace(3, 1);
+    mpp2.emplace(7, 11, 12);
     mpp.insert({2, 5}); // {1,2},{2,5},{3,1}
 
     for (auto it : mpp)
@@ -238,14 +242,14 @@ void explainUMap()
 
 void explainExtra()
 {
-    vector<int> a = {4, 16, 8, 10};
+    vector<int> a = {4, 16, 8, 10}; // max heap
     auto it = a.begin();
     sort(it, it + 4);
     for (auto i : a)
     {
         cout << i << " ";
     }
-    sort(it, it + 4, greater<int>());
+    sort(it, it + 4, greater<int>()); // min heap
     for (auto i : a)
     {
         cout << i << " ";
