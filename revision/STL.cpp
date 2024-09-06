@@ -249,24 +249,45 @@ void explainExtra()
     {
         cout << i << " ";
     }
-    // sort(it, it + 4, greater<int>()); // min heap
-    // for (auto i : a)
-    // {
-    //     cout << i << " ";
-    // }
+    sort(it, it + 4, greater<int>()); // min heap
+    for (auto i : a)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+    int max = *max_element(it, it + 4); // find out the max element in an array or vector
+    int min = *min_element(it, it + 4); // find out the min element in an array or vecto
+    int num = 7;                        // binary= 00000000000000000000000000000111
+    int cnt = __builtin_popcount(num);  // counts the number of set bits(number of times 1 occurred) for the binary of num i.e. 7
+    //__builtin_popcountll(num) for long long input
+    string s = "321";
+    sort(s.begin(), s.end());
+    do
+    {
+        cout << s << endl;
+    } while (next_permutation(s.begin(), s.end()));
 
-    // int max = *max_element(it, it + 4); // find out the max element in an array or vector
-    // int max = *min_element(it, it + 4); // find out the min element in an array or vector
+    int n; // Hash Map
+    int arr[n];
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
 
-    // int num = 7;                       // binary= 00000000000000000000000000000111
-    // int cnt = __builtin_popcount(num); // counts the number of set bits(number of times 1 occurred) for the binary of num i.e. 7
-    // //__builtin_popcountll(num) for long long inputs
+    map<int, int> mpp; // Pre-computing
+    for (int i = 0; i < n; i++)
+    {
+        mpp[arr[i]]++;
+    }
 
-    // string s="321";
-    // sort(s.begin(),s.end());
-
-    // do{cout<<s<<endl;}
-    // while(next_permutation(s.begin(),s.end()));
+    int q; // fetching
+    cin >> q;
+    for (int i = 0; i < q; i++)
+    {
+        int number;
+        cout << mpp[number];
+    }
 }
 
 class Cookie
@@ -304,6 +325,6 @@ int main()
     // explainList();
     // explainSet();
     // explainMap();
-    // explainExtra();
+    explainExtra();
     return 0;
 }
