@@ -268,17 +268,14 @@ void explainExtra()
     } while (next_permutation(s.begin(), s.end()));
 
     int n; // Hash Map
-    int arr[n];
     cin >> n;
+    int arr[n];
+    unordered_map<int, int> mpp;
+
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
-    }
-
-    map<int, int> mpp; // Pre-computing
-    for (int i = 0; i < n; i++)
-    {
-        mpp[arr[i]]++;
+        mpp[arr[i]]++; // Pre-computing
     }
 
     int q; // fetching
@@ -286,6 +283,7 @@ void explainExtra()
     for (int i = 0; i < q; i++)
     {
         int number;
+        cin >> number;
         cout << mpp[number];
     }
 }
