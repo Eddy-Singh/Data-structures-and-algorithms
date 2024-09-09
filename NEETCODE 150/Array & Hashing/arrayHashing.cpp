@@ -5,7 +5,7 @@ class Solution
 {
 public:
     // 1. Duplicate Integer
-    bool hasDuplicate(vector<int> &nums)
+    bool hasDuplicate1(vector<int> &nums)
     { // bruteforce
         for (int i = 0; i < nums.size(); i++)
         {
@@ -19,7 +19,7 @@ public:
         }
         return false;
     }
-    bool hasDuplicateAlternate(vector<int> &nums)
+    bool hasDuplicate2(vector<int> &nums)
     { // good solution
         unordered_set<int> s;
         for (int i = 0; i < nums.size(); i++)
@@ -27,6 +27,14 @@ public:
             s.emplace(nums[i]);
         }
         return (s.size() != nums.size());
+    }
+
+    // 2. Is Anagram
+    bool isAnagram1(string s, string t)
+    {
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
+        return s == t;
     }
 };
 int main()
