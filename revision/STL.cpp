@@ -171,8 +171,7 @@ void explainSet()
     st.erase(iter);
     st.erase(5);
     st.erase(st.find(2), st.find(4)); // 1 4 5
-
-    int cnt = st.count(2); // 1 or 0
+    int cnt = st.count(2);            // 1 or 0
 }
 
 void multiSet()
