@@ -36,6 +36,29 @@ public:
         sort(t.begin(), t.end());
         return s == t;
     }
+
+    bool isAnagram2(string s, string t)
+    {
+        // good solution
+        if (s.length() != t.length())
+            return false;
+
+        int n = s.length();
+
+        unordered_map<char, int> a;
+        unordered_map<char, int> b;
+
+        for (int i = 0; i < n; i++)
+        {
+            a[s[i]]++;
+            b[t[i]]++;
+        }
+
+        if (a == b)
+            return true;
+
+        return false;
+    }
 };
 int main()
 {
