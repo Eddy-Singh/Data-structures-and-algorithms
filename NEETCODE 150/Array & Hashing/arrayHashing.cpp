@@ -26,7 +26,7 @@ public:
         {
             s.emplace(nums[i]);
         }
-        return (s.size() != nums.size()) ? true : false;
+        return (s.size() != nums.size());
     }
 };
 int main()
