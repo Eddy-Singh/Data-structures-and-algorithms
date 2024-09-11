@@ -306,6 +306,7 @@ public:
         this->color = abc;
         cout << "color has been set to: " << color << endl;
     }
+    
 };
 int main()
 {
