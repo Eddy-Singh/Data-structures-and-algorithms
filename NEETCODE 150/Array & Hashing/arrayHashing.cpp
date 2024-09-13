@@ -101,6 +101,22 @@ public:
         }
         return ans;
     }
+    vector<int> topKFrequent(vector<int> &nums, int k)
+    {
+        unordered_map<int, int> m;
+        priority_queue<pair<int, int>> pq;
+        for (auto i : nums)
+        {
+            m[i]++;
+        }
+        for (auto i : m)
+        {
+            pq.emplace(i.second, i.first);
+        }
+        vector<int> ans;
+
+        return ans;
+    }
 };
 int main()
 {
