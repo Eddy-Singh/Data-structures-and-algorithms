@@ -114,7 +114,11 @@ public:
             pq.emplace(i.second, i.first);
         }
         vector<int> ans;
-
+        for (int i = 0; i < k; i++)
+        {
+            ans.emplace_back(pq.top().second);
+            pq.pop();
+        }
         return ans;
     }
 };
