@@ -51,7 +51,8 @@ void explainVector()
     vector<int> v4(2, 100);            // 100 100
     v4.insert(v4.begin(), 300);        // 300 100 100
     v4.insert(v4.begin() + 1, 2, 10);  // 300 10 10 100 100
-    cout << v4.size();
+    cout << v4.size() << endl;
+    cout << v4.back();
 
     vector<int> copy(2, 50);                         // 50 50
     v4.insert(v4.begin(), copy.begin(), copy.end()); // 50 50 300 10 10 100 100
@@ -306,7 +307,6 @@ public:
         this->color = abc;
         cout << "color has been set to: " << color << endl;
     }
-    
 };
 int main()
 {

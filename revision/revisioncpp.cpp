@@ -23,11 +23,11 @@ void bubbleSort(int arr[], int n)
 {
     for (int i = 0; i < n; i++)
     {
-        for (int i = 1; i < n; i++)
+        for (int j = 1; j < n; j++)
         {
-            if (arr[i - 1] > arr[i])
+            if (arr[j - 1] > arr[j])
             {
-                swap(arr[i - 1], arr[i]);
+                swap(arr[j - 1], arr[j]);
             }
         }
     }
@@ -131,6 +131,12 @@ int main()
     string c = "aaaaaaaaaa";
     int s = a.size();
     int arr[5] = {90, 80, 70, 60, 50};
+    bubbleSort(arr, 5);
+    for (auto i : arr)
+    {
+        cout << i << " ";
+    }
+
     int q = a.length();
 
     cout << s << " " << q;
