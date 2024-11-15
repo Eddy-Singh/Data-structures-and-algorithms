@@ -137,8 +137,7 @@ void explainPQ()
     pq.push(5);
     pq.emplace(2);
     pq.emplace(8);
-    pq.emplace(19); // 2 5 8 19
-
+    pq.emplace(19);   // 2 5 8 19
     cout << pq.top(); // 19
 
     priority_queue<int, vector<int>, greater<int>> pq2; // min heap
@@ -169,6 +168,7 @@ void explainSet()
 
     set<int>::iterator it = st.find(3);
     auto iter = st.find(2);
+    st.size();
     st.erase(iter);
     st.erase(5);
     st.erase(st.find(2), st.find(4)); // 1 4 5
@@ -310,16 +310,13 @@ public:
 };
 int main()
 {
-    // explainPair();
-
     // Cookie *cookieone = new Cookie("Green");
     // cout << cookieone->getColor();
     // cookieone->setColor("blue");
     // cout << cookieone->getColor();
 
-    // int arr[5] = {1, 2, 3, 4, 5};
-    // string num = "0123456789";
-    // cout << num.substr(3, 4) << endl;
+    // explainPair();
+    // explainVector();
     // explainList();
     // explainSet();
     // explainMap();
