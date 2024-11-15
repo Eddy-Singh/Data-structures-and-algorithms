@@ -28,7 +28,6 @@ void explainVector()
     vector<int> vect(5);    // 0 0 0 0 0
 
     vector<int> v3(ve); // v3= 100 100 100 100 100
-
     vector<int>::iterator it = v3.begin();
     auto ite = v.begin();
     ite = v.end(); // points next to the last element in the vector
@@ -45,6 +44,11 @@ void explainVector()
     {
         cout << *iter << " ";
     }
+    for (auto it : v)
+    {
+        cout << it << " ";
+    }
+    cout << endl;
 
     v.erase(v.begin());
     v.erase(v.begin(), v.begin() + 2); // 2nd term points to the element next to the mentioned address
