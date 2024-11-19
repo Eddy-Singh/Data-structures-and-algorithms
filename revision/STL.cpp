@@ -327,3 +327,18 @@ int main()
     // explainExtra();
     return 0;
 }
+
+/*
+Use vector:
+When you need fast random access.
+When you primarily add/remove elements at the end.
+When you need contiguous memory allocation.
+Use list:
+When you need efficient insertion/removal at both ends and in the middle.
+When you don't need fast random access.
+When you can tolerate non-contiguous memory allocation.
+Use deque:
+When you need efficient insertion/removal at both ends.
+When you need reasonably fast random access.
+When you can tolerate non-contiguous memory allocation.
+*/
