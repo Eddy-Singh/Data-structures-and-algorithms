@@ -221,9 +221,9 @@ void explainMap()
     mpp2.emplace(make_pair(7, 11), 12);
     mpp.insert({2, 5}); // {1,2},{2,5},{3,1}
 
-    for (auto it : mpp)
+    for (auto i : mpp)
     {
-        cout << it.first << " " << it.second << endl;
+        cout << i.first << " " << i.second << endl;
     }
     cout << mpp[1];
     cout << mpp[5];
