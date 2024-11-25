@@ -26,6 +26,38 @@ public:
         return true;
     }
 };
+class MinStack
+{
+public:
+    stack<int> stk;
+    stack<int> minStk;
+    MinStack() {}
+
+    void push(int val)
+    {
+        if (minStk.empty() || minStk.top() >= val)
+            minStk.emplace(val);
+        stk.emplace(val);
+    }
+
+    void pop()
+    {
+        if (minStk.top() == stk.top())
+            minStk.pop();
+        stk.pop();
+    }
+
+    int top()
+    {
+        return stk.top();
+    }
+
+    int getMin()
+    {
+        return minStk.top();
+    }
+};
+
 int main()
 {
 
